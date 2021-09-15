@@ -46,10 +46,10 @@
   "devDependencies": {
     "@types/react": "^16.0.0",
     "@types/webpack-env": "^1.13.6",
-    "@tarojs/mini-runner": "3.3.3",
+    "@tarojs/mini-runner": "^3.3.3",
     "@babel/core": "^7.8.0",
-    "@tarojs/webpack-runner": "3.3.3",
-    "babel-preset-taro": "3.3.3",
+    "@tarojs/webpack-runner": "^3.3.3",
+    "babel-preset-taro": "^3.3.3",
     "eslint-config-taro": "3.0.9",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.8.2",

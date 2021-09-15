@@ -47,7 +47,7 @@ export default class TestInputFocus extends PureComponent<any> {
             className='search-input'
             type="text"
             placeholder='搜一搜'
-            focus
+            focus={isSearching}
             onBlur={this.handleInputBlur}
           />
         </View>
