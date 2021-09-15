@@ -1,24 +1,64 @@
-import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
+import { PureComponent } from 'react'
+import { Input, View, Button } from '@tarojs/components'
+
 import './index.styl'
 
-export default class Index extends Component {
+export default class TestInputFocus extends PureComponent<any> {
 
-  componentWillMount () { }
+  state: any = {
+    isSearching: false,
+  }
 
-  componentDidMount () { }
+  componentDidMount() {
+  }
 
-  componentWillUnmount () { }
+  handleInputBlur = () => {
+    this.setState({
+      isSearching: false,
+    })
+  }
 
-  componentDidShow () { }
+  handleInputShow = () => {
+    this.setState({
+      isSearching: true,
+    })
+  }
 
-  componentDidHide () { }
+  render() {
 
-  render () {
+    const {
+      isSearching,
+    } = this.state
+
+    let inputSearchElem
+
+    if (!isSearching) {
+      inputSearchElem = (
+        <Button
+          onClick={this.handleInputShow}
+        >
+          搜索
+        </Button>
+      )
+    } else {
+      inputSearchElem = (
+        <View>
+          <Input
+            className='search-input'
+            type="text"
+            placeholder='搜一搜'
+            focus
+            onBlur={this.handleInputBlur}
+          />
+        </View>
+      )
+    }
+
     return (
-      <View className='index'>
-        <Text>Hello world!</Text>
+      <View className="test-page">
+        {inputSearchElem}
       </View>
     )
   }
 }
+
